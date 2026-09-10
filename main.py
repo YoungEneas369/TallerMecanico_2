@@ -1,11 +1,22 @@
 # main.py
-# Importamos la clase Vehiculo desde el archivo vehiculo.py
 from vehiculo import Vehiculo
+from auto import Auto
+from moto import Moto
+from camion import Camion
 
-# Creamos una instancia (objeto) de Vehiculo con patente 'KXPR84' y año 2019
-auto1 = Vehiculo(patente="KXPR84", anio=2019)
+v1 = Vehiculo("KXPR84", 2019)
+v1.ingresar()
+print(v1.patente, v1.anio, v1.tarifa_hora())
 
-# Mostramos por consola los valores usando print()
-print(f"Patente: {auto1.patente}")
-print(f"Año: {auto1.anio}")
-print(f"¿Está en el taller?: {auto1._en_taller}")
+# Demostración de herencia: Auto, Moto y Camion heredan todo de Vehiculo
+auto1 = Auto("AB12CD", 2021)
+moto1 = Moto("XY98", 2023)
+camion1 = Camion("TR77ZZ", 2018)
+
+auto1.ingresar()
+moto1.ingresar()
+camion1.ingresar()
+
+print("Auto:", auto1.patente, auto1.anio, auto1.tarifa_hora(), "¿en taller?:", auto1._en_taller)
+print("Moto:", moto1.patente, moto1.anio, moto1.tarifa_hora(), "¿en taller?:", moto1._en_taller)
+print("Camión:", camion1.patente, camion1.anio, camion1.tarifa_hora(), "¿en taller?:", camion1._en_taller)

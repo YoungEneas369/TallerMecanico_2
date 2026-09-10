@@ -15,3 +15,11 @@ class Vehiculo:
         self.anio = anio
         # Fija _en_taller siempre en False por defecto, ya que un vehículo recién registrado nunca parte dentro del taller.
         self._en_taller = False
+
+    def ingresar(self) -> None:
+        """Marca el vehículo como ingresado al taller."""
+        self._en_taller = True
+
+    def tarifa_hora(self) -> int:
+        """Retorna la tarifa genérica por hora (5000)."""
+        return 5000
